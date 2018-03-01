@@ -18,21 +18,17 @@ $Objectarray = @(
     $Object.Display()
     $Price = $Object.SetRandomPrice()
     
-    $Price
-    
-    <#
-    do {
-    [int] $Guess = Read-Host = "Quel est le prix de cet objet ?"
+     do {
+    [int] $Guess = Read-Host "Quel est le prix de cet objet ?"
     if ($Guess -lt $Price){
     echo "C'est plus"
     }
-    else{
+    if ($Guess -gt $Price){
     echo "c'est moins"
     }
     } until ($Guess-eq $Price)
-    echo "gagné !!!"
+    Write-Host -ForegroundColor yellow "gagné !!!"
 
-    #>
 #}
 }
 Main
